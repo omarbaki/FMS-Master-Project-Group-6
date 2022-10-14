@@ -10,7 +10,7 @@ function setup () {
   back.size(50);
   back.position(340,170);
   back.mousePressed(homeScreen);
-  
+
   memory = createButton("Memory"); 
   memory.size(80);
   memory.position(161,95);
@@ -62,5 +62,8 @@ function settingsScreen() {
 }
 
 function homeScreen() {
-  
+  remove()
+  function draw() {
+  background('#0096FF');
+  }
 }
