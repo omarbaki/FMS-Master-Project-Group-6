@@ -12,12 +12,8 @@ function setup() {
   settings.mousePressed(gameSelect)
 }
 
-
-
-
 //Start Screen
 function draw() {
-  background(220);
   background('#0096FF')
 
   rect(125,70,150,40)
@@ -36,8 +32,8 @@ function draw() {
   circle(345,65,50)
   
 }
-  
-      
 
 //Game Selection Screen
 function gameSelect() {
+ 
+}
