@@ -1,5 +1,5 @@
 function setup () {
-  createCanvas(400, 200);
+  cnv = createCanvas(400, 200);
   
   settings = createButton("Settings");
   settings.size(80);
@@ -14,7 +14,7 @@ function setup () {
   memory = createButton("Memory"); 
   memory.size(80);
   memory.position(161,95);
-  memory.mousePressed(memoryGame);
+  memory.mousePressed();
   
   matching = createButton("Matching"); 
   matching.size(80);
@@ -62,7 +62,10 @@ function settingsScreen() {
 }
 
 function homeScreen() {
-  remove()
+  cnv.remove()
+  function setup() {
+    createCanvas(800,700)
+  }
   function draw() {
   background('#0096FF');
   }
