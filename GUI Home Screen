@@ -1,18 +1,43 @@
 function setup() {
   createCanvas(400, 400);
+  createCanvas(400, 200);
+  gameSelection = createButton("Game Selection"); //Gear shape icon???
+  gameSelection.size(120);
+  gameSelection.position(141,130);
+  gameSelection.mousePressed(gameSelect);
+
+  settings = createButton("Settings");
+  settings.size(80);
+  settings.position(10,170);
+  settings.mousePressed(gameSelect)
 }
 
+
+
+
+//Start Screen
 function draw() {
   background(220);
-  
-  rect(125,170,150,40)
+  background('#0096FF')
+
+  rect(125,70,150,40)
   textAlign(CENTER)
   textSize(25);
-  text("Project FMS", 200, 200)
+  text("Project FMS", 200, 100)
   
   rect(140,280,120,30)
   textAlign(CENTER)
   textSize(15);
   text("Game Selection", 200, 300)
- 
+
+  
+  triangle(45,40,80,80,25,90)
+
+  circle(345,65,50)
+  
 }
+  
+      
+
+//Game Selection Screen
+function gameSelect() {
