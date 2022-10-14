@@ -1,0 +1,66 @@
+function setup () {
+  createCanvas(400, 200);
+  
+  settings = createButton("Settings");
+  settings.size(80);
+  settings.position(10,170);
+  settings.mousePressed(settingsScreen) 
+  
+  back = createButton("Back");
+  back.size(50);
+  back.position(340,170);
+  back.mousePressed(homeScreen);
+  
+  memory = createButton("Memory"); 
+  memory.size(80);
+  memory.position(161,95);
+  memory.mousePressed(memoryGame);
+  
+  matching = createButton("Matching"); 
+  matching.size(80);
+  matching.position(61,95);
+  matching.mousePressed(matchingGame);
+  
+  tracing = createButton("Tracing"); 
+  tracing.size(80);
+  tracing.position(261,95);
+  tracing.mousePressed(tracingGame);
+  
+  let ans1 = "hi"
+  let ans2 = "hi"
+  if (match(ans1,ans2) == null) {
+    memory = createButton("Memory"); 
+    memory.size(120);
+    memory.position(141,130);
+    memory.mousePressed(memoryGame);
+  }
+}      
+
+function draw() {
+  background('#0096FF');
+  
+  let FMS;
+  rect(20,20,75,20,20)
+  FMS = text("Project FMS",24,35)
+  textSize(12)
+}
+
+function memoryGame() {
+  
+}
+
+function tracingGame() {
+  
+}
+
+function matchingGame() {
+  
+}
+
+function settingsScreen() {
+  
+}
+
+function homeScreen() {
+  
+}
