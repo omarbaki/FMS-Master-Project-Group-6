@@ -1,14 +1,11 @@
-// Creates the background for the Exercise.
 function setup() {
-  createCanvas(800, 700);
-  fill('#0096FF');
-  rect(50, 50, 700, 500, 20);
+  createCanvas(700, 600);
+  background('#0096FF');
   button = createButton();
   button.position(100, 500);
   button.mousePressed(settingsPage);
 }
 
 function settingsPage(){
-  fill('#FF9800');
-  rect(50, 50, 700, 500, 20);
+  background('#FF9800'); 
 }
