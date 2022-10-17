@@ -1,36 +1,72 @@
-function setup() {
-  createCanvas(400, 200);
-  gameSelection = createButton("Game Selection")
-  gameSelection.size(120);
-  gameSelection.position(141,130);
-  gameSelection.mousePressed(gameSelect);
+function setup () {
+  cnv = createCanvas(400, 200);
   
   settings = createButton("Settings");
   settings.size(80);
   settings.position(10,170);
-  settings.mousePressed(gameSelect);
-}
+  settings.mousePressed(settingsScreen) 
+  
+  back = createButton("Back");
+  back.size(50);
+  back.position(340,170);
+  back.mousePressed(homeScreen);
 
-//Start Screen
+  memory = createButton("Memory"); 
+  memory.size(80);
+  memory.position(161,105);
+  memory.mousePressed();
+  
+  matching = createButton("Matching"); 
+  matching.size(80);
+  matching.position(61,105);
+  matching.mousePressed(matchingGame);
+  
+  tracing = createButton("Tracing"); 
+  tracing.size(80);
+  tracing.position(261,105);
+  tracing.mousePressed(tracingGame);
+  
+  let ans1 = "hi"
+  let ans2 = "hi"
+  if (match(ans1,ans2) == null) {
+    memory = createButton("Memory"); 
+    memory.size(120);
+    memory.position(141,110);
+    memory.mousePressed(memoryGame);
+  }
+}      
+
 function draw() {
+  background('#0096FF');
   
-  background('#0096FF')
-  
-  r1 = rect(125,70,150,40)
-  textAlign(CENTER)
-  textSize(25);
-  triangle(45,40,80,80,25,90);
-  circle(345,65,50);
-  
-  text("Project FMS", 200, 100)
+  let FMS;
+  rect(125,40,150,40)
+  FMS = text("Project FMS",130,70)
+  textSize(25)
+}
+
+function memoryGame() {
   
 }
 
-//Game Selection Screen
-function gameSelect() {
+function tracingGame() {
+  
+}
+
+function matchingGame() {
   
 }
 
 function settingsScreen() {
   
+}
+
+function homeScreen() {
+  cnv.remove()
+  function setup() {
+    createCanvas(800,700)
+  }
+  function draw() {
+  background('#0096FF');
+  }
 }
