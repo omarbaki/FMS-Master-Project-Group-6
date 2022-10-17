@@ -1,11 +1,14 @@
 function setup() {
   createCanvas(700, 600);
-  background('#0096FF');
+  background('white');
+  fill('#0096FF');
+  rect(25, 25, 650, 525);
   button = createButton();
   button.position(100, 500);
   button.mousePressed(settingsPage);
 }
 
 function settingsPage(){
-  background('#FF9800'); 
+  background('#FF9800');
+  
 }
