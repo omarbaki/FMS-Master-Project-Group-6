@@ -1,0 +1,55 @@
+function setup () {
+  cnv = createCanvas(700, 600);
+  
+  settings = createButton("Settings");
+  settings.position(20,540);
+  settings.style('color:#0096FF')
+  settings.style('font-size', '25px')
+  settings.mousePressed(settingsScreen) 
+  
+  back = createButton("Back");
+  back.position(600,540);
+  back.style('color:#0096FF');
+  back.style('font-size','25px')
+  back.mousePressed(homeScreen);
+  
+  start = createButton("Start")
+  start.position(320,440);
+  start.style('color:#0096FF');
+  start.style('font-size','25px');
+  start.mousePressed(memoryGame);
+}      
+
+function draw() {
+  background('#0096FF');
+  
+  rect(350-75,170,150,40);
+  let titleText = text("Memory",350,200);
+  titleText.textAlign(CENTER);
+  titleText.textSize(12);
+  
+  rect(135,280,430,100)
+  let instrText = text("Instructions: <text>",350,335)
+  instrText.textAlign(CENTER);
+  instrText.textSize(25);
+  
+  // FIXME: Find why instrText and titleText's textSize functions are swapped.
+}
+
+function settingsScreen() {
+  
+}
+
+function memoryGame() {
+  
+}
+
+function homeScreen() {
+  cnv.remove()
+  function setup() {
+    createCanvas(800,700)
+  }
+  function draw() {
+  background('#0096FF');
+  }
+}
