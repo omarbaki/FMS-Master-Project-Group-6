@@ -1,0 +1,6 @@
+function setup() {
+  createCanvas(700, 600);
+  background('white');
+  fill('#0096FF');
+  rect(25, 25, 650, 525);
+}
