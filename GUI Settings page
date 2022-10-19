@@ -1,1 +1,93 @@
 
+let w = 900;
+let h = 500;
+let s = 20;
+let images = [];
+let backColor = 255;
+let tColor = 0;
+let sColor = 0;
+let midColor = 255;
+let homeClicked = false;
+
+function preload(){
+  images.push(loadImage('assets/home.png'));
+  images.push(loadImage('assets/brightness.png'));
+  images.push(loadImage('assets/textSize.png'));
+ 
+}
+
+function setup() {
+  createCanvas(w,h);
+  images[0].resize(80, 80);
+  images[1].resize(80, 80);
+  images[2].resize(100, 100);
+}
+
+function draw() {
+  if(homeClicked){
+    background(0);
+    fill(255);
+    textSize(100);
+    text("Home Reached",w/2-textWidth("Home Reached")/2,h/2);
+  }
+  else{
+    background(backColor);
+    drawBackground();
+  }
+  
+}
+
+function drawBackground(){
+  fill(backColor);
+  stroke(sColor);
+  rect(20,20,w-40,h-40,100);
+  fill(66,132,245,midColor);
+  rect(40,40,w-80,h-80,100);
+  
+  textSize(s);
+  textStyle(BOLD);
+  fill(tColor);
+  
+  noStroke();
+  text("SETTINGS",w/2-textWidth("SETTINGS")/2,90);
+  image(images[0],200,100);
+  text("Return to home screen",350,160);
+  image(images[1],200,240);
+  text("Adjust brightness",350,290);
+  image(images[2],200,350);
+  text("Adjust text size",350,420);
+}
+
+function mousePressed(){
+  
+  if(!homeClicked){
+    if(mouseX>=185 && mouseX<=320 && mouseY>=360 && mouseY<=440){
+      s+=1;
+      if(s>46)
+        s = 20;
+    }
+    else if(mouseX>=185 && mouseX<=320 && mouseY>=240 && mouseY<=330){
+      backColor-=25;
+      tColor+=10;
+      sColor+=30;
+      midColor-=20;
+      if(backColor<=0){
+        tColor=0; 
+        sColor=0;
+        midColor=255;
+        backColor=255;
+      }
+    }
+    else if(mouseX>=185 && mouseX<=320 && mouseY>=90 && mouseY<=230){
+      homeClicked = true;    
+    }
+  }else{
+    homeClicked = false;
+  }
+  
+    
+}
+
+
+
+
